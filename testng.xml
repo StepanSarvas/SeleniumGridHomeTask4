@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="SmokeSuite" parallel="tests">
+    <test name="tests.MyTestsChrome" parallel="methods" thread-count="3">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="MyTests">
+                <methods>
+                    <include name="checkStartPageComponents"/>
+                    <include name="addItemToWishList"/>
+                    <include name="addItemToBucket"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="tests.MyTestsFirefox" parallel="methods" thread-count="3">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="MyTests">
+                <methods>
+                    <include name="checkStartPageComponents"/>
+                    <include name="addItemToWishList"/>
+                    <include name="addItemToBucket"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
